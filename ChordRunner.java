@@ -8,7 +8,7 @@ public class ChordRunner {
   
   static{
     try {
-      Scanner input = new Scanner(new File(song.toLowerCase()+".csv"));
+      Scanner input = new Scanner(new File(song.toLowerCase()+".txt"));
       while(input.hasNextLine()){
         String[] temp = input.nextLine().split(" ");
         sentiment.put(temp[0],Double.parseDouble(temp[1]));
