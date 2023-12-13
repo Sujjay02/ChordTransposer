@@ -3,26 +3,44 @@ import java.util.*;
 public class ChordRunner {
   public static void main(String{}args){
     Scanner input = New Scanner (System.in);
-    System.out.println("Choose a song to access. Type the name of the song [ex: Here I am to Worship]"); 
-    string song = input.next();
-    song = song.replaceAll(" ","");
-    song = song.toLowerCase();
-  
-  static{
-    try {
-      Scanner input = new Scanner(new File("songList.csv"));
-      while(input.hasNextLine()){
-        String[] temp = input.nextLine().split(",");
-        sentiment.put(temp[0],Double.parseDouble(temp[1]));
-      }
-      input.close();
-    }
-    catch(Exception e){
-      System.out.println("This song is not part of the database yet, learn how to add a song here.");
-    }
+    System.out.println("Enter a list of notes that you wish to transpose (AB#CD)");
+    String [] song = input.nextLine();
+    System.out.println("Enter increments to transpose the notes to");
+    int inc = input.nextInt();
 
-    }
+    System.out.println("Transposed Notes");
+    System.out.println(transposeNote(song, int);
+
+
   }
 
+
+  public static String transposeNote(String note, int interval){
+    String[] Alphabet = {"C","C#","D","D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+
+    int noteIndex=-4;
+    for(int i = 0; i<song.length(); i++){
+      if (Alphabet[i].equals(note)){
+        noteIndex = i;
+      }
+    }
+
+    if (noteIndex != -4){
+      int transposed;
+      transposed = (noteIndex+interval)% Alphabet.length();
+      if (transposed < 0){
+        transposed += Alphabet.length;
+      }
+
+      return Alphabet[transposed]
+
+        }
+
+    else{
+      return Alphabet[noteIndex];
+
+    }
+    
+    
 }
     
