@@ -12,5 +12,6 @@ Basic Program that transposes chords/notes depending on the song
 
 Daily Notes:
 11/5/23: Created Repository, created basic input function and catch function for calling different songs in.
+12/12/23: Restarted program using methods rather than the hashmap, hashmap will be saved for future iterations; created a method for transposing individual notes; Still have to account for sharp notes;
 
 Made by Sujjay Karthikeyan, started on November 5, 2023
