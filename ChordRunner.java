@@ -6,7 +6,7 @@ public class ChordRunner {
     System.out.println("Enter a list of notes that you wish to transpose (A B# C D)");
     String song = input.nextLine();
     song = song.toUpperCase();
-    System.out.println("Enter increments to transpose the notes to");
+    System.out.println("Enter increments to transpose the notes? (Half-steps)");
     int inc = input.nextInt();
 
     System.out.println("Transposed Notes");
@@ -59,4 +59,3 @@ public static String transposeSong (String song, int interval){
   }
 }
 
- 
