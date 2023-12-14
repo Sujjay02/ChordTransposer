@@ -1,25 +1,27 @@
 import java.util.*;
 
 public class ChordRunner {
-  public static void main(String{}args){
-    Scanner input = New Scanner (System.in);
-    System.out.println("Enter a list of notes that you wish to transpose (AB#CD)");
-    String [] song = input.nextLine();
+  public static void main(String [] args){
+    Scanner input = new Scanner (System.in);
+    System.out.println("Enter a list of notes that you wish to transpose (A B# C D)");
+    String song = input.nextLine();
+    song = song.toUpperCase();
     System.out.println("Enter increments to transpose the notes to");
     int inc = input.nextInt();
 
     System.out.println("Transposed Notes");
-    System.out.println(transposeNote(song, int);
+    String transposedNotes = transposeSong(song, inc);
+    System.out.println(transposedNotes);
 
 
   }
 
 
-  public static String transposeNote(String note, int interval){
+ public static String transposeNote(String note, int interval){
     String[] Alphabet = {"C","C#","D","D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
     int noteIndex=-4;
-    for(int i = 0; i<song.length(); i++){
+    for(int i = 0; i<Alphabet.length; i++){
       if (Alphabet[i].equals(note)){
         noteIndex = i;
       }
@@ -27,20 +29,34 @@ public class ChordRunner {
 
     if (noteIndex != -4){
       int transposed;
-      transposed = (noteIndex+interval)% Alphabet.length();
+      transposed = (noteIndex+interval)% Alphabet.length;
       if (transposed < 0){
         transposed += Alphabet.length;
       }
 
-      return Alphabet[transposed]
+      return Alphabet[transposed];
 
         }
 
     else{
-      return Alphabet[noteIndex];
+      return note;
 
     }
     
+ }
     
+public static String transposeSong (String song, int interval){
+    String [] notes = song.split(" ");
+
+
+    StringBuilder transposedSong = new StringBuilder();
+    for (String note : notes){
+      transposedSong.append(transposeNote(note, interval)).append(" ");
+    }
+
+    return transposedSong.toString().trim();
+
+  }
 }
-    
+
+ 
