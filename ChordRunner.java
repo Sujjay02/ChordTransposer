@@ -13,6 +13,20 @@ public class ChordRunner {
     String transposedNotes = transposeSong(song, inc);
     System.out.println(transposedNotes);
 
+    System.out.println("Continue transposing?");
+    String response = input.nextLine();
+    response = response.toUpperCase();
+    while (response.equals("Y") || response.equals("YES")){
+      System.out.println("Enter a list of notes that you wish to transpose (A B# C D)");
+      song = input.nextLine();
+      song = song.toUpperCase();
+      System.out.println("Enter increments to transpose the notes? (Half-steps)");
+      inc = input.nextInt();
+
+      System.out.println("Transposed Notes");
+      String transposedNotes2 = transposeSong(song, inc);
+      System.out.println(transposedNotes2);
+    }
 
   }
 
