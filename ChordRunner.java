@@ -3,30 +3,26 @@ import java.util.*;
 public class ChordRunner {
   public static void main(String [] args){
     Scanner input = new Scanner (System.in);
-    System.out.println("Enter a list of notes that you wish to transpose (A B# C D)");
-    String song = input.nextLine();
-    song = song.toUpperCase();
-    System.out.println("Enter increments to transpose the notes? (Half-steps)");
-    int inc = input.nextInt();
-
-    System.out.println("Transposed Notes");
-    String transposedNotes = transposeSong(song, inc);
-    System.out.println(transposedNotes);
-
-    System.out.println("Continue transposing?");
-    String response = input.nextLine();
-    response = response.toUpperCase();
-    while (response.equals("Y") || response.equals("YES")){
+   do{
       System.out.println("Enter a list of notes that you wish to transpose (A B# C D)");
-      song = input.nextLine();
+      String song = input.nextLine();
       song = song.toUpperCase();
       System.out.println("Enter increments to transpose the notes? (Half-steps)");
-      inc = input.nextInt();
+      int inc = input.nextInt();
 
       System.out.println("Transposed Notes");
-      String transposedNotes2 = transposeSong(song, inc);
-      System.out.println(transposedNotes2);
-    }
+      String transposedNotes = transposeSong(song, inc);
+      System.out.println(transposedNotes);
+
+      input.nextLine();
+      System.out.println("Continue transposing? (Y/N)");
+      
+      if(input.nextLine().equalsIgnoreCase("N")){
+          System.out.println("Thank you for using this Note Transposer");
+      }
+
+    } while(input.nextLine().equalsIgnoreCase("Y"));
+
 
   }
 
